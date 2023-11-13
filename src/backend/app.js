@@ -4,10 +4,13 @@ app.use(express.json());
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const cors = require('cors');
+
+app.use(cors());
 
 var usuariosRouter = require('./routes/usuarios');
 var productosRouter = require('./routes/productos');
-var carritosRouter = require('./routes/carritos');
+var carritosRouter = require('./routes/carritoss.js');
 var ticketsRouter = require('./routes/tickets');
 
 const mongoose = require('mongoose');

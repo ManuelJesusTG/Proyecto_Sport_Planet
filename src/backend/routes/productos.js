@@ -12,9 +12,9 @@ router.get('/', function(req, res, next) {
   });
 
   router.get('/a', function(req,res,next){
-    Producto.find().exec(function(err,jugadorinfo) {
+    Producto.find().exec(function(err,productosinfo) {
         if (err) res.status(500).send(err);
-        else res.status(200).json(jugadorinfo);
+        else res.status(200).json(productosinfo);
     })
 })
 
