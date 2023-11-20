@@ -30,6 +30,17 @@ app.get('/backend', (req, res) => {
   res.json({ message: 'Datos desde el backend' });
 });
 
+app.get('/api/prueba', cors(), (req, res) => {
+  console.log('Solicitud recibida en la ruta /api/prueba');
+  // Lógica para obtener y enviar el string
+  const datos = { mensaje: "Datos desde el servidor" };
+  res.send(datos);
+},(error) => {
+  console.error('Error al obtener la cadena', error);
+  console.error('Detalles del error:', error.message); // Imprime el mensaje de error
+  res.status(500).send('Error interno del servidor');
+});
+
 console.log(process.env.port)
 
 

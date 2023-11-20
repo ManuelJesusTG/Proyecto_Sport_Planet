@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// HttpClientModule
-import {HttpClientModule} from '@angular/common/http';
-import { ListaProductosComponent } from './productos/productos.component';
-
+import { ProductosComponent } from './productos/productos.component';
+import { PruebaService } from './prueba.service';
+import { HeaderComponent } from './header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaProductosComponent
+    ProductosComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule
+    ,HttpClientModule, NgbModule
   ],
-  providers: [],
+  providers: [PruebaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

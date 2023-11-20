@@ -1,0 +1,23 @@
+<div class="divheader">
+    <img src="../../assets/img/Sin_Fondo.png" alt="Logo sport planet" class="logo">
+    <div class="buttons">
+      <button class="button">Registro</button>
+      <button class="button">Inicio de Sesión</button>
+    </div>
+</div>
+<div class="navbar-container">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">Mi Tienda</a>
+      <button class="navbar-toggler" (click)="toggleNavbar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-links" [ngClass]="{ 'show': isNavbarOpen }">
+        <a class="nav-link" routerLink="/">Inicio</a>
+        <a class="nav-link" routerLink="/catalogo">Catálogo</a>
+        <a class="nav-link" routerLink="/sobre-nosotros">Sobre Nosotros</a>
+        <a class="nav-link" routerLink="/carrito">Carrito</a>
+      </div>
+    </nav>
+  </div>
