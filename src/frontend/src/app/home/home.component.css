@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF858;
+    background: linear-gradient(rgba(255, 0, 0, 0.8), #FFF858);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .promo-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 5%;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .column {
+    flex: 1;
+    padding: 25px;
+  }
+
+  .column img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .text {
+    text-align: justify;
+    background-color: #FF8B37;
+    border: solid black;
+    border-radius: 20%;
+    padding: 10px;
+  }
+
+  .titulo_promo{
+    font-size: x-large;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .button {
+    background-color: #FFF858;
+    color: #333;
+    border: none;
+    padding: 15px;
+    margin-left: 40px;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+
+  .button:hover {
+    background-color: rgb(255, 166, 0);
+  }
+
+  .buttons{
+    text-align: center;
+  }
