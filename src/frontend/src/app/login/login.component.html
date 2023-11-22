@@ -1,0 +1,14 @@
+<body>
+    <div id="registro-form">
+      <h2>Inicio de sesión</h2>
+      <form (ngSubmit)="LogearUsuario()">
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" [(ngModel)]="usuario.correo" required>
+  
+        <label for="contrasenia">Contraseña:</label>
+        <input type="password" id="contrasenia" name="contrasenia" [(ngModel)]="usuario.contrasenia" required>
+
+        <button type="button" (click)="LogearUsuario()">Acceder</button>
+      </form>
+    </div>
+  </body>

@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(255, 0, 0, 0.8), #FFF858);
+    overflow: hidden;
+  }
+
+  .filtro-panel {
+    float: left;
+    width: 30%;
+    background-color: #FFF858;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .producto-container {
+    margin-left: 30%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .producto {
+    width: 30%;
+    margin: 10px;
+    padding: 15px;
+    background-color: #FF8B37;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }

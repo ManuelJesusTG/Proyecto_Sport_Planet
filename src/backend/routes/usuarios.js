@@ -27,6 +27,8 @@ router.post('/register', function(req, res, next) {
 
     const { nombre, correo, contrasenia, direccion, numero } = req.body;
 
+    console.log(nombre, correo, contrasenia, direccion, numero);
+
     let usuario = new Usuario({
         nombre,
         correo,
@@ -73,6 +75,8 @@ router.post('/login', function(req,res, next) {
       }
    // Valida que la contraseña escrita por el usuario, sea la almacenada en la db
       if (! bcrypt.compareSync(body.contrasenia, usuarioDB.contrasenia)){
+         
+         console.log("Acceso no autorizado")
          return res.status(400).json({
             ok: false,
             err: {
@@ -82,6 +86,7 @@ router.post('/login', function(req,res, next) {
       }
 
       res.send("Acceso autorizado")
+      console.log("Acceso autorizado")
    })
 
 })
