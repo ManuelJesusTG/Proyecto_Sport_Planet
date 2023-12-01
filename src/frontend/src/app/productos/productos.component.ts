@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PruebaService } from '../prueba.service'; // Ajusta la ruta según la ubicación de tu servicio
+import { PruebaService } from '../prueba.service';
 
 @Component({
   selector: 'app-productos',

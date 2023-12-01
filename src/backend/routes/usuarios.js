@@ -7,6 +7,9 @@ var mongoose = require('mongoose');
 var Usuario = require('../models/Usuario.js');
 var db = mongoose.connection;
 
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
 
 router.get('/', function(req, res, next) {
     res.send("usuario")
@@ -53,42 +56,24 @@ router.post('/register', function(req, res, next) {
 
 // Apartado de login / autentificación
 
-router.post('/login', function(req,res, next) {
 
-    let body = req.body;
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) {
+      return res.status(500).json({ message: 'Error de autenticación' });
+    }
+    if (!user) {
+      return res.status(401).json({ message: 'Credenciales incorrectas' });
+    }
 
-    Usuario.findOne({ correo: body.correo }, (erro, usuarioDB)=>{
-        if (erro) {
-          return res.status(500).json({
-             ok: false,
-             err: erro
-          })
-       }
-   // Verifica que exista un usuario con el mail escrita por el usuario.
-      if (!usuarioDB) {
-         return res.status(400).json({
-           ok: false,
-           err: {
-               message: "Usuario o contraseña incorrectos"
-           }
-        })
+    // Si llegas aquí, la autenticación fue exitosa y el user esta logueado :D
+    req.login(user, (err) => {
+      if (err) {
+        return res.status(500).json({ message: 'Error de autenticación' });
       }
-   // Valida que la contraseña escrita por el usuario, sea la almacenada en la db
-      if (! bcrypt.compareSync(body.contrasenia, usuarioDB.contrasenia)){
-         
-         console.log("Acceso no autorizado")
-         return res.status(400).json({
-            ok: false,
-            err: {
-              message: "Usuario o contraseña incorrectos"
-            }
-         });
-      }
-
-      res.send("Acceso autorizado")
-      console.log("Acceso autorizado")
-   })
-
-})
+      return res.status(200).json({ message: 'Autenticación exitosa' });
+    });
+  })(req, res, next);
+});
 
 module.exports = router;

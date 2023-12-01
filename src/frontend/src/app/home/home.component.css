@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFF858;
-    background: linear-gradient(rgba(255, 0, 0, 0.8), #FFF858);
+    background-color: #4b4b4b;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
   }
 
   .container {
@@ -39,7 +39,7 @@ body {
 
   .text {
     text-align: justify;
-    background-color: #FF8B37;
+    background-color: #2c2c2c;
     border: solid black;
     border-radius: 20%;
     padding: 10px;
