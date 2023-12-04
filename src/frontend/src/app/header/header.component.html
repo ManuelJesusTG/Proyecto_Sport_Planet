@@ -1,8 +1,12 @@
 <div class="divheader">
     <img src="../../assets/img/Sin_Fondo.png" alt="Logo sport planet" class="logo">
-    <div class="buttons">
+    <div class="buttons" *ngIf="!isAuthenticated()">
       <a href="/register" class="button">Registro</a>
       <a href="/login" class="button">Inicio de sesión</a>
+    </div>
+    <div class="buttons" *ngIf="isAuthenticated()">
+      <a href="/register" class="button">Mi perfil</a>
+      <button (click)="logout()" class="button">Cerrar sesión</button>
     </div>
 </div>
 <nav>

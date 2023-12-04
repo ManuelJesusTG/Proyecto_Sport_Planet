@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { PruebaService } from './prueba.service';
 import { RegistroService } from './registro.service';
 import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     CatalogoComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

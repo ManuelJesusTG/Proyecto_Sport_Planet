@@ -27,4 +27,14 @@ export class RegisterComponent {
         }
       );
   }
+  ngOnInit(): void {
+    this.registroService.isLoggedIn().subscribe(isLoggedIn => {
+      if (isLoggedIn) {
+
+        // Para reedireccionar si ya inicio sesión
+
+        this.router.navigate(['/']);
+      }
+    });
+}
 }

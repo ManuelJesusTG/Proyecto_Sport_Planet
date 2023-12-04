@@ -66,13 +66,11 @@ router.post('/login', (req, res, next) => {
       return res.status(401).json({ message: 'Credenciales incorrectas' });
     }
 
-    // Si llegas aquí, la autenticación fue exitosa y el user esta logueado :D
-    req.login(user, (err) => {
-      if (err) {
-        return res.status(500).json({ message: 'Error de autenticación' });
-      }
-      return res.status(200).json({ message: 'Autenticación exitosa' });
-    });
+    // Si llegas aquí, la autenticación fue exitosa y el usuario está logueado :D
+    // Generamos el token para probar
+    const token = jwt.sign({ usuario: user }, 'tu_secreto_secreto', { expiresIn: '1h' });
+
+    res.status(200).json({ message: 'Autenticación exitosa', token });
   })(req, res, next);
 });
 

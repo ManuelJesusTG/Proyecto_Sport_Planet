@@ -22,16 +22,13 @@ export class LoginComponent {
 
     this.registroService.logearUsuario(this.usuario)
       .subscribe(
-        response => {
-          console.log('Inicio exitoso', response);
+        (response: any) => {
+          const token = response.token;
 
-          // Cambiar cookies por JWT
-
-          const headers = response.headers;
-          const myCookie = headers.get('Set-Cookie');
-          localStorage.setItem('miCookie', myCookie);
-
-          this.router.navigate(['/']);
+          if (token) {
+            localStorage.setItem('miToken', token);
+            this.router.navigate(['/']);
+          }
         },
         error => {
           console.error('Error en el Inicio de sesion', error);
@@ -39,4 +36,15 @@ export class LoginComponent {
         }
       );
   }
+
+  ngOnInit(): void {
+    this.registroService.isLoggedIn().subscribe(isLoggedIn => {
+      if (isLoggedIn) {
+
+        // Para reedireccionar si ya inicio sesión
+
+        this.router.navigate(['/']);
+      }
+    });
+}
 }
