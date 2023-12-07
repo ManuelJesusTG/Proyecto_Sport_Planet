@@ -9,6 +9,10 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { AvisoComponent } from './aviso/aviso.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
+import { CookiesComponent } from './cookies/cookies.component';
 
 const routes: Routes = [
   { path: '' ,component: HomeComponent },
@@ -17,6 +21,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   { path: 'perfil', component: PerfilComponent },
+  { path: 'nosotros', component: NosotrosComponent},
+  { path: 'aviso', component: AvisoComponent},
+  { path: 'privacidad', component: PrivacidadComponent},
+  { path: 'cookies', component: CookiesComponent},
 
 // Abajo del todo para redirigir
   { path: '**', redirectTo: '' }

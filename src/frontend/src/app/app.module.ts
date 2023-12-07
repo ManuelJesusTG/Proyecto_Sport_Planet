@@ -18,6 +18,10 @@ import { PruebaService } from './prueba.service';
 import { RegistroService } from './registro.service';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { AvisoComponent } from './aviso/aviso.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
+import { CookiesComponent } from './cookies/cookies.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { PerfilComponent } from './perfil/perfil.component';
     CatalogoComponent,
     RegisterComponent,
     LoginComponent,
-    PerfilComponent
+    PerfilComponent,
+    NosotrosComponent,
+    AvisoComponent,
+    PrivacidadComponent,
+    CookiesComponent
   ],
   imports: [
     BrowserModule,
