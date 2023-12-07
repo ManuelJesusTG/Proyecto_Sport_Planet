@@ -24,6 +24,25 @@ router.get('/', function(req, res, next) {
     })
 })
 
+// GET de un usuario
+
+router.get('/:userId', async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    const usuario = await Usuario.findById(userId);
+
+    if (!usuario) {
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    res.status(200).json(usuario);
+  } catch (error) {
+    console.error('Error al obtener el usuario por ID:', error);
+    res.status(500).json({ message: 'Error interno del servidor' });
+  }
+});
+
 // Post de los usuarios (Registro)
 
 router.post('/register', function(req, res, next) {
@@ -68,9 +87,9 @@ router.post('/login', (req, res, next) => {
 
     // Si llegas aquí, la autenticación fue exitosa y el usuario está logueado :D
     // Generamos el token para probar
-    const token = jwt.sign({ usuario: user }, 'tu_secreto_secreto', { expiresIn: '1h' });
+    const token = jwt.sign({ usuario: { _id: user._id, correo: user.correo }}, 'tu_secreto_secreto', { expiresIn: '1h' });
 
-    res.status(200).json({ message: 'Autenticación exitosa', token });
+    res.status(200).json({ message: 'Autenticación exitosa', token, userId: user._id });
   })(req, res, next);
 });
 

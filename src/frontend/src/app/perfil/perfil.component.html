@@ -1,1 +1,19 @@
-<p>perfil works!</p>
+<body>
+    <div id="container">
+        <div id="leftDiv">
+          <img src="../../assets/img/usuario.png" alt="Imagen de perfil">
+        </div>
+        <div *ngIf="usuario" id="userInfo">
+          <p><strong>Nombre de usuario:</strong> {{usuario.nombre}}</p>
+          <p><strong>Correo:</strong> {{usuario.correo}}</p>
+          <p><strong>Contraseña:</strong> {{usuario.contrasenia}}</p>
+          <p><strong>Dirección:</strong>{{usuario.direccion}}</p>
+          <p><strong>Telefono:</strong>{{usuario.numero}}</p>
+          <p><strong>Tipo de usuario:</strong>{{usuario.rol}}</p>
+        </div>
+        <div id="botones">
+          <button onclick="misPedidos()">Mis Pedidos</button>
+          <button onclick="editarPerfil()">Editar Perfil</button>
+        </div>
+      </div>
+</body>

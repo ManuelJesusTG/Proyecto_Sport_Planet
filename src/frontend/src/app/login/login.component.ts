@@ -24,9 +24,12 @@ export class LoginComponent {
       .subscribe(
         (response: any) => {
           const token = response.token;
+          const userId = response.userId;
 
-          if (token) {
+          if (token && userId) {
             localStorage.setItem('miToken', token);
+            localStorage.setItem('userId', userId);
+
             this.router.navigate(['/']);
           }
         },

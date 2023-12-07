@@ -63,5 +63,9 @@ export class RegistroService {
     return false;
   }
 
+  obtenerUsuarioPorId(userId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${userId}`);
+  }
+
   
 }
