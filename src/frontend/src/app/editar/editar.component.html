@@ -1,0 +1,23 @@
+<body>
+    <div id="registro-form">
+      <h2>Editar perfil</h2>
+      <form (ngSubmit)="actualizarUsuario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevosDatos.nombre" required>
+  
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" [(ngModel)]="nuevosDatos.correo" required>
+  
+        <label for="contrasenia">Contraseña:</label>
+        <input type="password" id="contrasenia" name="contrasenia" [(ngModel)]="nuevosDatos.contrasenia" required>
+  
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" [(ngModel)]="nuevosDatos.direccion" required>
+  
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" [(ngModel)]="nuevosDatos.numero" required>
+  
+        <button type="button" (click)="actualizarUsuario()">Actualizar perfil</button>
+      </form>
+    </div>
+  </body>

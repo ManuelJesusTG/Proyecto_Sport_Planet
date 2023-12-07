@@ -22,6 +22,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { AvisoComponent } from './aviso/aviso.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { CookiesComponent } from './cookies/cookies.component';
+import { EditarComponent } from './editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CookiesComponent } from './cookies/cookies.component';
     NosotrosComponent,
     AvisoComponent,
     PrivacidadComponent,
-    CookiesComponent
+    CookiesComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

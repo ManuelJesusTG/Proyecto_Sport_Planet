@@ -67,5 +67,9 @@ export class RegistroService {
     return this.http.get(`${this.apiUrl}/${userId}`);
   }
 
+  actualizarUsuario(userId: string, nuevosDatos: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/actualizar-usuario/${userId}`, nuevosDatos);
+  }
+
   
 }

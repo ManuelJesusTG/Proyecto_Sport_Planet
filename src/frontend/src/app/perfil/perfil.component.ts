@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RegistroService } from '../registro.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -9,12 +10,23 @@ import { RegistroService } from '../registro.service';
 export class PerfilComponent {
   usuario: any;
   
-  constructor(private registroservice: RegistroService) {}
+  constructor(private registroService: RegistroService, private router: Router) {}
 
   ngOnInit(): void {
+
+    this.registroService.isLoggedIn().subscribe(isLoggedIn => {
+      if (!isLoggedIn) {
+
+        // Para reedireccionar si no ha iniciado sesion
+
+        this.router.navigate(['/']);
+      }
+    });
+
+
     const userId = localStorage.getItem('userId');
     if (userId !== null) {
-      this.registroservice.obtenerUsuarioPorId(userId).subscribe(
+      this.registroService.obtenerUsuarioPorId(userId).subscribe(
         (response) => {
           this.usuario = response;
           this.usuario.contrasenia = '•'.repeat(10);

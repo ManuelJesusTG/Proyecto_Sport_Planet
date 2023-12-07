@@ -93,4 +93,32 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
+
+router.put('/actualizar-usuario/:id', async (req, res, next) => {
+  
+
+    const { id } = req.params;
+    const nuevosDatosUsuario = req.body;
+
+    try {
+      if (nuevosDatosUsuario.contrasenia) {
+
+        const hashedPassword = await bcrypt.hash(nuevosDatosUsuario.contrasenia, 10);
+        nuevosDatosUsuario.contrasenia = hashedPassword;
+      }
+
+      const usuarioActualizado = await Usuario.findByIdAndUpdate(id, nuevosDatosUsuario, { new: true });
+
+      if (!usuarioActualizado) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+      }
+
+      res.status(200).json({ message: 'Usuario actualizado correctamente', usuario: usuarioActualizado });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error al actualizar el usuario' });
+    }
+  (req, res, next);
+});
+
 module.exports = router;

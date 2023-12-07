@@ -13,6 +13,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { AvisoComponent } from './aviso/aviso.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { CookiesComponent } from './cookies/cookies.component';
+import { EditarComponent } from './editar/editar.component';
 
 const routes: Routes = [
   { path: '' ,component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'aviso', component: AvisoComponent},
   { path: 'privacidad', component: PrivacidadComponent},
   { path: 'cookies', component: CookiesComponent},
+  { path: 'editarPerfil', component: EditarComponent},
 
 // Abajo del todo para redirigir
   { path: '**', redirectTo: '' }

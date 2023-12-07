@@ -40,7 +40,7 @@ body {
   align-items: center;
 }
 
-#botones button {
+#botones a {
   margin-top: 10px;
   padding: 10px;
   font-size: 16px;
@@ -49,8 +49,9 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  text-decoration: none;
 }
 
-#botones button:hover {
+#botones a:hover {
   background-color: #2980b9;
 }
