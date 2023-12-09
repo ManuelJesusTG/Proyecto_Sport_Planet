@@ -14,7 +14,8 @@ const ProductoSchema = new Schema({
     enum: ['XS','S', 'M','L','XL'],
     default: 'M'
 },
-  color: String
+  color: String,
+  imagen: String
 });
 
 // Crear el modelo

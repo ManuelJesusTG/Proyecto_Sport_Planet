@@ -33,3 +33,21 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
+
+  .imagen-producto{
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    margin-bottom: 10px;
+  }
+  .producto h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+
+  .producto h4 {
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+  }

@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const cors = require('cors');
+const path = require('path');
 
 app.use(cors());
 

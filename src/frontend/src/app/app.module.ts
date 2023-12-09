@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductosComponent } from './productos/productos.component';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
@@ -16,6 +15,8 @@ import { RegisterComponent } from './register/register.component';
 
 import { PruebaService } from './prueba.service';
 import { RegistroService } from './registro.service';
+import { ProductosService } from './productos.service';
+
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
@@ -23,11 +24,12 @@ import { AvisoComponent } from './aviso/aviso.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { EditarComponent } from './editar/editar.component';
+import { CommonModule } from '@angular/common';
+import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductosComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
@@ -39,14 +41,15 @@ import { EditarComponent } from './editar/editar.component';
     AvisoComponent,
     PrivacidadComponent,
     CookiesComponent,
-    EditarComponent
+    EditarComponent,
+    NuevoProductoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
-    ,HttpClientModule, NgbModule, FormsModule
+    ,HttpClientModule, NgbModule, FormsModule, CommonModule
   ],
-  providers: [PruebaService,RegistroService],
+  providers: [PruebaService,RegistroService,ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
