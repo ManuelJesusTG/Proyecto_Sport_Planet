@@ -71,4 +71,10 @@ export class ProductosService {
     return this.http.delete(url);
 }
 
+obtenerTicketsUsuario(usuarioID: string): Observable<any[]> {
+    const url = `${this.api}tickets/${usuarioID}`;
+    return this.http.get<any[]>(url);
+  }
+
+
 }

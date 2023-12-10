@@ -48,4 +48,19 @@ router.post('/', function(req, res, next) {
   });
 });
 
+// GET  de un usuario en especifico
+
+router.get('/:usuarioID', async (req, res) => {
+  const usuarioID = req.params.usuarioID;
+
+  try {
+    const tickets = await Ticket.find({ UsuarioID: usuarioID }).exec();
+
+    res.status(200).json(tickets);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ ok: false, error: 'Error al obtener los tickets del usuario.' });
+  }
+});
+
 module.exports = router;

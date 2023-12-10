@@ -1,0 +1,12 @@
+<body>
+    <div *ngIf="ticketsUsuario && ticketsUsuario.length > 0" class="productos-container">
+        <h3>Tus tickets:</h3>
+        <ul>
+          <li *ngFor="let ticket of ticketsUsuario" class="producto-item">
+            <div class="producto-info">
+              <p> Tu pedido fue procesado el dia: {{ ticket.fechaVenta | date:'medium' }} - por un valor de : {{ ticket.precio }} €</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+</body>

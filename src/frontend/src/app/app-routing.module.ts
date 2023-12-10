@@ -18,6 +18,7 @@ import { ProductoComponent } from './producto/producto.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FinalizarPagoComponent } from './finalizar-pago/finalizar-pago.component';
 import { GraciasComponent } from './gracias/gracias.component';
+import { MisPedidosComponent } from './mis-pedidos/mis-pedidos.component';
 
 const routes: Routes = [
   { path: '' ,component: HomeComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent},
   { path: 'finalizar-pago', component: FinalizarPagoComponent},
   { path: 'gracias', component: GraciasComponent},
+  { path: 'mis-pedidos', component: MisPedidosComponent},
 
 // Abajo del todo para redirigir
   { path: '**', redirectTo: '' }
