@@ -14,6 +14,8 @@ import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { CookiesComponent } from './cookies/cookies.component';
 import { EditarComponent } from './editar/editar.component';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
+import { ProductoComponent } from './producto/producto.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 const routes: Routes = [
   { path: '' ,component: HomeComponent },
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'cookies', component: CookiesComponent},
   { path: 'editarPerfil', component: EditarComponent},
   { path: 'nuevo-producto', component: NuevoProductoComponent},
+  { path: 'producto/:id', component: ProductoComponent},
+  { path: 'carrito', component: CarritoComponent},
 
 // Abajo del todo para redirigir
   { path: '**', redirectTo: '' }

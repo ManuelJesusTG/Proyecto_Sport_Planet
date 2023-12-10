@@ -1,0 +1,20 @@
+<body>
+    <div id="contenedor" *ngIf="producto">
+      <div id="imagen">
+        <img [src]="producto.imagen" alt="{{ producto.nombre }}">
+      </div>
+      <div id="info-producto">
+        <h2>{{producto.nombre}}</h2>
+        <p>{{producto.descripcion}}</p>
+        <p>Precio: {{producto.precio}}€</p>
+        <p>Talla del producto: {{producto.talla}}</p>
+        <div *ngIf="!isAuthenticated()">
+            <a href="/login">Inicia sesión para añadir productos a tu carrito</a>
+        </div>
+        <div *ngIf="isAuthenticated()">
+            <button (click)="agregarAlCarrito(producto._id)">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  

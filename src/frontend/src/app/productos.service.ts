@@ -32,4 +32,22 @@ export class ProductosService {
     return this.http.post(`${this.apiUrl}/subir-imagen-producto`, formData);
 
   }
+
+  obtenerProductoPorId(id: string): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<any>(url);
+  }
+
+  agregarAlCarrito(productoId: string): Observable<any> {
+    const userId = localStorage.getItem('userId');
+    const url = `${this.api}carritos/agregar-al-carrito`;
+    const data = { usuarioId: userId, productoId };
+    return this.http.post<any>(url, data);
+  }
+
+  obtenerProductosCarrito(usuarioId: string): Observable<any[]> {
+    const url = `${this.api}carritos/${usuarioId}`;
+    return this.http.get<any[]>(url);
+  }
+
 }

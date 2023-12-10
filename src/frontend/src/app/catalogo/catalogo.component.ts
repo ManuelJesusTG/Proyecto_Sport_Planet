@@ -18,4 +18,8 @@ export class CatalogoComponent {
     this.productos = this.productoService.obtenerProductos();
   }  
 
+  irAProducto(id: string) {
+    this.router.navigate(['/producto', id]);
+  }
+
 }

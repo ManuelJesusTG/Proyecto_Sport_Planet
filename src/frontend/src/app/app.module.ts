@@ -26,6 +26,8 @@ import { CookiesComponent } from './cookies/cookies.component';
 import { EditarComponent } from './editar/editar.component';
 import { CommonModule } from '@angular/common';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
+import { ProductoComponent } from './producto/producto.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.componen
     PrivacidadComponent,
     CookiesComponent,
     EditarComponent,
-    NuevoProductoComponent
+    NuevoProductoComponent,
+    ProductoComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

@@ -72,6 +72,8 @@ router.post('/subir-imagen-producto', upload.single('imagen'), async (req, res) 
   }
 });
 
+// Codigo para obtener la imagen del producto que hemos subido
+
 const rutaImagenes = path.join(__dirname,'..', 'imagenes', 'productos');
 router.use('/imagenes/productos', express.static(rutaImagenes));
 
@@ -83,6 +85,34 @@ router.get('/obtener-imagen/imagenes/productos/:nombreImagen', (req, res) => {
   res.sendFile(rutaImagen);
 });
 
+// get de 1 solo producto
+
+router.get('/:id', function(req, res, next) {
+  const productoId = req.params.id;
+
+  Producto.findById(productoId, function(err, producto) {
+    if (err) {
+      res.status(500).send(err);
+    } else if (!producto) {
+      res.status(404).send('Producto no encontrado');
+    } else {
+      const productoConImagen = {
+        _id: producto._id,
+        nombre: producto.nombre,
+        descripcion: producto.descripcion,
+        precio: producto.precio,
+        stock: producto.stock,
+        categoria: producto.categoria,
+        stock_status: producto.stock_status,
+        marca: producto.marca,
+        talla: producto.talla,
+        imagen: `http://localhost:3000/productos/obtener-imagen/${producto.imagen}` // Ruta completa de la imagen
+      };
+
+      res.status(200).json(productoConImagen);
+    }
+  });
+});
 
 
 module.exports = router;
