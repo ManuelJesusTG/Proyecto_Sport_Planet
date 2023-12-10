@@ -46,8 +46,29 @@ export class ProductosService {
   }
 
   obtenerProductosCarrito(usuarioId: string): Observable<any[]> {
+    const url = `${this.api}carritos/api/productos/${usuarioId}`;
+    return this.http.get<any[]>(url);
+  }
+
+  obtenerPrecio(usuarioId: string): Observable<any[]> {
     const url = `${this.api}carritos/${usuarioId}`;
     return this.http.get<any[]>(url);
   }
+
+  eliminarProductoCarrito(usuarioId: string, productoId: string): Observable<any> {
+    const url = `${this.api}carritos/${usuarioId}/eliminar/${productoId}`;
+    return this.http.delete(url);
+  }
+
+  confirmarPago(pago: any): Observable<any> {
+    const url = `${this.api}tickets/`;
+    console.log(pago)
+    return this.http.post<any>(url, pago);
+  }
+
+  borrarCarrito(usuarioID: string): Observable<any> {
+    const url = `${this.api}carritos/${usuarioID}`;
+    return this.http.delete(url);
+}
 
 }

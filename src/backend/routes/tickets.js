@@ -18,4 +18,34 @@ router.get('/', function(req, res, next) {
     })
 })
 
+// POST de ticket
+
+router.post('/', function(req, res, next) {
+  const { usuarioID, datosPago, metodoPago, precio, Productos } = req.body;
+
+  console.log('Datos recibidos en el servidor:', usuarioID, datosPago, metodoPago, precio, Productos);
+
+  let ticket = new Ticket({
+    UsuarioID: usuarioID,
+    DatosPago: datosPago,
+    MetodoPago: metodoPago,
+    precio: precio,
+    Productos: Productos
+  });
+
+  ticket.save((err, ticketDB) => {
+    if (err) {
+      return res.status(400).json({
+        ok: false,
+        err,
+      });
+    }
+
+    res.json({
+      ok: true,
+      ticket: ticketDB
+    });
+  });
+});
+
 module.exports = router;

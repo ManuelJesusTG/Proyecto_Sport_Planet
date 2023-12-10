@@ -6,6 +6,9 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const cors = require('cors');
 const path = require('path');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
 
 app.use(cors());
 

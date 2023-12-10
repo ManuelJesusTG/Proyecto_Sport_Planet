@@ -1,0 +1,15 @@
+<div id="confirmar-pago-form">
+    <form (ngSubmit)="finalizarPago()">
+      <label for="DatosPago">Datos de Pago:</label>
+      <input type="text" id="DatosPago" name="DatosPago" [(ngModel)]="ticket.datosPago" required>
+  
+      <label for="MetodoPago">Forma de Pago:</label>
+      <select id="MetodoPago" name="MetodoPago" [(ngModel)]="ticket.metodoPago" required>
+        <option value="Paypal">Paypal</option>
+        <option value="Tarjeta de crédito">Tarjeta de crédito</option>
+        <option value="Bizum">Bizum</option>
+      </select>
+  
+      <button type="submit">Confirmar Pago</button>
+    </form>
+  </div>

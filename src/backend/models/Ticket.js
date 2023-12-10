@@ -8,17 +8,14 @@ const TicketSchema = new Schema({
   UsuarioID: {
     type: Schema.ObjectId,
     ref: 'Usuario'
-    },
+  },
   Productos: [{
     type: Schema.ObjectId,
     ref: 'Producto'
   }],
   precio: Number,
-  MetodoPago: {
-    type: String,
-    enum: ['Paypal','Tarjeta de credito','Bizum'],
-    default: 'Tarjeta de credito'
-},
+  DatosPago: String,
+  MetodoPago: String,
   fechaVenta: { type: Date, default: Date.now }
 });
 

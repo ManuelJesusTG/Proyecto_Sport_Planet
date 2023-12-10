@@ -28,6 +28,8 @@ import { CommonModule } from '@angular/common';
 import { NuevoProductoComponent } from './nuevo-producto/nuevo-producto.component';
 import { ProductoComponent } from './producto/producto.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { FinalizarPagoComponent } from './finalizar-pago/finalizar-pago.component';
+import { GraciasComponent } from './gracias/gracias.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { CarritoComponent } from './carrito/carrito.component';
     EditarComponent,
     NuevoProductoComponent,
     ProductoComponent,
-    CarritoComponent
+    CarritoComponent,
+    FinalizarPagoComponent,
+    GraciasComponent
   ],
   imports: [
     BrowserModule,

@@ -51,3 +51,12 @@ body {
     background-color: black;
     border-radius: 20px;
   }
+
+  .button {
+    background-color: #FFF858;
+    color: #333;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+  }
