@@ -38,7 +38,7 @@ export class CarritoComponent implements OnInit {
           stock_status: producto.stock_status,
           marca: producto.marca,
           talla: producto.talla,
-          imagen: `http://localhost:3000/productos/obtener-imagen/${producto.imagen}`
+          imagen: `https://proyectosportplanet-production.up.railway.app/productos/obtener-imagen/${producto.imagen}`
         }));
       },
       error => {

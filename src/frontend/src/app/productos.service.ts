@@ -8,8 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class ProductosService {
 
-  private apiUrl = 'http://localhost:3000/productos';
-  private api = 'http://localhost:3000/'
+  private apiUrl = 'https://proyectosportplanet-production.up.railway.app/productos';
+  private api = 'https://proyectosportplanet-production.up.railway.app/'
 
   constructor(private http: HttpClient) {}
 

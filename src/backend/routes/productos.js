@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
           stock_status: producto.stock_status,
           marca: producto.marca,
           talla: producto.talla,
-          imagen: `http://localhost:3000/productos/obtener-imagen/${producto.imagen}` // Ruta completa de la imagen
+          imagen: `https://proyectosportplanet-production.up.railway.app/productos/obtener-imagen/${producto.imagen}` // Ruta completa de la imagen
         };
       });
 
@@ -106,7 +106,7 @@ router.get('/:id', function(req, res, next) {
         stock_status: producto.stock_status,
         marca: producto.marca,
         talla: producto.talla,
-        imagen: `http://localhost:3000/productos/obtener-imagen/${producto.imagen}` // Ruta completa de la imagen
+        imagen: `https://proyectosportplanet-production.up.railway.app/productos/obtener-imagen/${producto.imagen}` // Ruta completa de la imagen
       };
 
       res.status(200).json(productoConImagen);

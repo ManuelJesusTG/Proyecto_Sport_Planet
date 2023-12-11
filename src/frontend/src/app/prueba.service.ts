@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PruebaService {
-  private apiUrl = 'http://localhost:3000/api/prueba';
+  private apiUrl = 'https://proyectosportplanet-production.up.railway.app/api/prueba';
 
   constructor(private http: HttpClient) {}
 
   obtenerDatos(): Observable<any>{
-    return this.http.get<any>('http://localhost:3000/api/prueba');
+    return this.http.get<any>('https://proyectosportplanet-production.up.railway.app/api/prueba');
   }
 }

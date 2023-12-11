@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistroService {
-  private apiUrl = 'http://localhost:3000/usuarios';
+  private apiUrl = 'https://proyectosportplanet-production.up.railway.app/usuarios';
 
   private TOKEN_KEY = 'miToken';
 
