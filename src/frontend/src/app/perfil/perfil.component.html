@@ -1,7 +1,7 @@
 <body>
     <div id="container">
         <div id="leftDiv">
-          <img src="../../assets/img/usuario.png" alt="Imagen de perfil">
+          <img src="./assets/img/usuario.png" alt="Imagen de perfil">
         </div>
         <div *ngIf="usuario" id="userInfo">
           <p><strong>Nombre de usuario:</strong> {{usuario.nombre}}</p>
@@ -12,9 +12,9 @@
           <p><strong>Tipo de usuario:</strong>{{usuario.rol}}</p>
         </div>
         <div id="botones">
-          <a href="/mis-pedidos">Mis pedidos</a>
+          <a href="./mis-pedidos">Mis pedidos</a>
           <a href="editarPerfil">Editar perfil</a>
-          <a href="/nuevo-producto" *ngIf="admin">Crear producto</a>
+          <a href="./nuevo-producto" *ngIf="admin">Crear producto</a>
         </div>
       </div>
 </body>

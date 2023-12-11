@@ -1,19 +1,19 @@
 <div class="divheader">
-    <img src="../../assets/img/Sin_Fondo.png" alt="Logo sport planet" class="logo">
+    <img src="./assets/img/Sin_Fondo.png" alt="Logo sport planet" class="logo">
     <div class="buttons" *ngIf="!isAuthenticated()">
-      <a href="/register" class="button">Registro</a>
-      <a href="/login" class="button">Inicio de sesión</a>
+      <a href="./register" class="button">Registro</a>
+      <a href="./login" class="button">Inicio de sesión</a>
     </div>
     <div class="buttons" *ngIf="isAuthenticated()">
-      <a href="/perfil" class="button">Mi perfil</a>
+      <a href="./perfil" class="button">Mi perfil</a>
       <button (click)="logout()" class="button">Cerrar sesión</button>
     </div>
 </div>
 <nav>
-    <a href="#">Inicio</a>
-    <a href="/catalogo">Catálogo</a>
-    <a href="/nosotros">Sobre nosotros</a>
-    <a href="/carrito">Carrito</a>
+    <a href="./">Inicio</a>
+    <a href="./catalogo">Catálogo</a>
+    <a href="./nosotros">Sobre nosotros</a>
+    <a href="./carrito">Carrito</a>
 
     <div class="search-bar">
         <input type="text" placeholder="Buscar">
