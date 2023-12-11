@@ -60,3 +60,20 @@ body {
     cursor: pointer;
     border-radius: 30px;
   }
+
+  .button:hover {
+    background-color: #ffd700;
+  }
+
+  .filtro{
+    background-color: #FFF858;
+    color: #333;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+
+  .filtro:hover {
+    background-color: #ffd700;
+  }

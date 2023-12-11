@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PerfilComponent {
   usuario: any;
+  admin: boolean = false;
   
   constructor(private registroService: RegistroService, private router: Router) {}
 
@@ -23,13 +24,16 @@ export class PerfilComponent {
       }
     });
 
-
     const userId = localStorage.getItem('userId');
     if (userId !== null) {
       this.registroService.obtenerUsuarioPorId(userId).subscribe(
         (response) => {
           this.usuario = response;
           this.usuario.contrasenia = '•'.repeat(10);
+          if (this.usuario.rol == "Administrador"){
+            console.log(this.usuario.rol)
+            this.admin = true
+          }
         },
         (error) => {
           console.error('Error al obtener la información del usuario:', error);
@@ -38,5 +42,6 @@ export class PerfilComponent {
     } else {
       console.error('El ID del usuario no está presente en el localStorage');
     }
+
   }
 }
