@@ -29,7 +29,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "/Proyecto_Sport_Planet/src/frontend/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
