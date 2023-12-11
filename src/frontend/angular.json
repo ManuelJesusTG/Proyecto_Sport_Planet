@@ -28,7 +28,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/Proyecto_Sport_Planet/src/frontend/"
           },
           "configurations": {
             "production": {
