@@ -1,39 +1,35 @@
 <body>
   <div *ngIf="isAuthenticated()">
-  <div *ngIf="productosCarrito.length > 0; else noProductos" class="productos-container">
-    <div *ngFor="let producto of productosCarrito" class="producto-item">
-      <img [src]="producto.imagen" alt="{{producto.nombre}}" class="producto-imagen">
-      <div class="producto-info">
-        <h3>{{producto.nombre}}</h3>
-        <p>{{producto.descripcion}}</p>
-        <p>Precio: {{producto.precio}}</p>
+    <div *ngIf="productosCarrito.length > 0; else noProductos" class="productos-container">
+      <div *ngFor="let producto of productosCarrito" class="producto-item">
+        <img [src]="producto.imagen" alt="{{producto.nombre}}" class="producto-imagen">
+        <div class="producto-info">
+          <h3>{{producto.nombre}}</h3>
+          <p>{{producto.descripcion}}</p>
+          <p>Precio: {{producto.precio}}</p>
+        </div>
+        <button class="producto-eliminar" (click)="eliminarProducto(producto._id)">Eliminar</button>
       </div>
-      <button class="producto-eliminar" (click)="eliminarProducto(producto._id)">Eliminar</button>
-    </div>
-  </div>
-  <div *ngFor="let p of precio | async" class="finalizar">
-    <span>Precio Total:  {{p.precio}}</span>
-    <a href="finalizar-pago" >Finalizar la compra</a>
+      
+      <div *ngFor="let p of precio | async" class="finalizar">
+        <span>Precio Total: {{p.precio}}</span>
+        <a href="finalizar-pago">Finalizar la compra</a>
+      </div>
     </div>
   
-  <ng-template #noProductos>
-    <div class="nada">
-      <h2>Tu Carrito esta vacio :(</h2>
-
-    <a href="/catalogo"> Ve al catalogo para añadir productos</a>
-    </div>
-
-  </ng-template>
+    <ng-template #noProductos>
+      <div class="nada">
+        <h2>Tu Carrito está vacío :(</h2>
+        <a href="/catalogo">Ve al catálogo para añadir productos</a>
+      </div>
+    </ng-template>
   </div>
-
+  
   <div *ngIf="!isAuthenticated()">
-
     <div class="nada">
-      <h2>Inicia sesion para comprobar tu carrito</h2>
-
-    <a href="/login">Inicia sesion</a>
+      <h2>Inicia sesión para comprobar tu carrito</h2>
+      <a href="/login">Inicia sesión</a>
     </div>
-
   </div>
   
 </body>
