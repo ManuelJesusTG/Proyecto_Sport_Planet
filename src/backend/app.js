@@ -90,7 +90,8 @@ app.get('/api/prueba', cors(), (req, res) => {
 
 console.log(process.env.port)
 
+const port = process.env.port || 3000;
 
-app.listen(process.env.port, () => {
-  console.log(`Servidor Express en el puerto ${process.env.port}`);
+app.listen(port, () => {
+  console.log(`Servidor Express en el puerto ${port}`);
 });
